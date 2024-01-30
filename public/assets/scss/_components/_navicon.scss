@@ -1,0 +1,70 @@
+/* Nav icon */
+
+$navicon-size : 2.2rem; 
+$transition: .3s; // increase this to see the transformations in slow-motion
+$line-color:#9e9e9e;
+
+@mixin line {
+  display: inline-block;
+  width: $navicon-size;
+  height: $navicon-size/8;
+  background-color: $line-color;
+  user-select: none;
+  border-radius: $navicon-size/14; 
+  transition: .3s;
+}
+
+.navicon-button {
+  padding:0px;
+  margin: 0px;
+  width:$navicon-size;
+  height:$navicon-size;
+  position:relative;
+  display:inline-block;
+  background:none;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  float: left;
+  
+  &:hover {
+    opacity: 1;
+    background:none;
+    .navicon:before { top: -($navicon-size/4); }
+    .navicon:after { top: $navicon-size/6; }
+  } 
+}
+
+.navicon {
+  @include line;
+  position: relative;
+    background:none;
+   &:before, &:after {
+    left:0%;
+    @include line;
+    position: absolute;
+    content: '';
+    transform-origin: $navicon-size/14 center;
+  }
+  &:before { 
+    top: -($navicon-size/6); 
+  }
+  &:after { 
+    top: $navicon-size/8;
+  }
+}
+
+
+.open.navicon-button {
+  .navicon:before, .navicon:after {
+     transform-origin: 50% 50%;
+      top:0;
+      width: $navicon-size;
+   }
+  
+   .navicon:before { transform: rotate3d(0,0,1,-45deg); }
+   .navicon:after { transform: rotate3d(0,0,1,45deg); }
+} 
+
+/* Nav icon */

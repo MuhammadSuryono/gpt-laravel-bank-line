@@ -1,0 +1,103 @@
+#content-ajax{
+  min-height: 600px;
+  margin-top: 0px;
+  padding-bottom: 150px;
+  background:$body-color;
+  .content-header.top{
+    padding:20px 15px !important;
+    background:$bank_side_grey2 !important;
+    color:white !important;
+    display:inline-block;
+    margin-bottom: 0px !important;
+    width:100%;
+    h1{
+    	display:inline-block;
+    	width:100%;
+    }
+  }
+  .content{
+    margin-top: 10px;
+  }
+}
+
+.content-header > .breadcrumb{
+  position:relative;
+  float: left;  
+  display:inline-block;
+  width:100%;
+  top:0%;
+  left:0%;
+  li,a{
+    color:white !important;
+  }
+  a{
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.content-header > .breadcrumb > li + li::before{
+  content:'/';
+}
+
+.box{
+	border-top:0px;
+	border-radius: 0px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0);
+	.box-header{
+		padding:15px;
+		border-bottom: 1px solid #d2d6de;
+    border-top: 1px solid #d2d6de;
+    background:$box-color;
+		.box-title{
+			text-transform: uppercase;
+			font-size: 1.3rem;
+		}
+	}
+  .box-body{
+    padding:20px 15px;
+    border-bottom: 1px solid #d2d6de;
+    background:$box-color;
+  }
+  .box-footer{
+    padding:15px;
+    background:none;
+    border-bottom: 0px solid #d2d6de;
+  }
+}
+
+.dataTables_wrapper{
+  margin-bottom: 10px;
+  .dataTables_length{
+    margin-bottom: 5px;
+    select{
+      margin:0px 5px;
+    }
+  }
+  .table{
+    thead{
+      background: $table-head-bg;
+      color: white;
+    }
+    tr:nth-of-type(2n+1){
+      background: rgba($table-head-bg,.05);
+    }
+  }
+}
+
+.form-area{
+  .has-error{
+    
+     input[type="text"],input[type="number"],input[type="password"],textarea,.select2-container--default{
+      border:1px solid #dd4b39;
+    }
+  }
+
+}
+
+.select2-container{
+  z-index: 9999;
+}
+
